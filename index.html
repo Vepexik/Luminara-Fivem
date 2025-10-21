@@ -4,89 +4,120 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Luminara RP</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 <style>
-  * {margin:0; padding:0; box-sizing:border-box; font-family:'Arial',sans-serif;}
-  body {background:#0b0e14; color:#fff;}
-  a {text-decoration:none; color:#00aaff;}
-  header {background:#0d111a; position:fixed; top:0; width:100%; z-index:100; padding:20px 0;}
-  nav {display:flex; justify-content:center; gap:30px;}
-  nav a {font-weight:bold; transition:0.3s;}
-  nav a:hover {color:#00aaff;}
-  section {padding:120px 20px; text-align:center;}
-  h1,h2,h3 {margin-bottom:20px;}
-  .btn {display:inline-block; padding:10px 25px; background:#00aaff; color:#fff; border-radius:5px; margin-top:10px; transition:0.3s;}
-  .btn:hover {background:#0088cc;}
-  footer {background:#0d111a; padding:20px 0; text-align:center; color:#aaa; font-size:14px; margin-top:50px;}
-  .hero {min-height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; background:linear-gradient(135deg,#0b0e14,#1a1d2a);}
-  .cards {display:flex; flex-wrap:wrap; justify-content:center; gap:20px; margin-top:40px;}
-  .card {background:#111426; padding:20px; border-radius:10px; width:250px; transition:0.3s;}
-  .card:hover {background:#1a1d2a;}
-  .card h3 {margin-bottom:10px;}
-  /* Obrázky - nahraď své vlastní */
-  .hero img, .cards img {max-width:100%; border-radius:10px; margin-bottom:15px;}
-  @media(max-width:768px){ nav {flex-direction:column; gap:15px;} .cards {flex-direction:column; align-items:center;} }
+/* Základní reset */
+* {margin:0; padding:0; box-sizing:border-box; font-family: 'Montserrat', sans-serif;}
+body {background:#0b0e14; color:#fff; line-height:1.6;}
+a {text-decoration:none; color:#00aaff;}
+header {position:fixed; top:0; width:100%; background:#0d111a; z-index:100; padding:20px 0;}
+nav {display:flex; justify-content:center; gap:40px;}
+nav a {font-weight:700; transition:0.3s;}
+nav a:hover {color:#00c8ff;}
+section {padding:120px 20px; text-align:center;}
+h1,h2,h3 {margin-bottom:20px;}
+.btn {display:inline-block; padding:12px 30px; background:#00c8ff; color:#fff; border-radius:6px; margin-top:10px; font-weight:700; transition:0.3s;}
+.btn:hover {background:#008bb3;}
+footer {background:#0d111a; padding:20px 0; text-align:center; color:#aaa; font-size:14px; margin-top:50px;}
+
+/* Hero */
+.hero {min-height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; background: linear-gradient(135deg,#0b0e14,#1a1d2a);}
+.hero h1 {font-size:3rem; margin-bottom:20px;}
+.hero p {font-size:1.2rem; margin-bottom:30px;}
+
+/* Sekce O serveru */
+.o-serveru {display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:40px; padding:100px 20px;}
+.o-serveru img {max-width:400px; border-radius:10px;}
+.o-serveru div {max-width:500px; text-align:left;}
+
+/* Sekce Aktivity */
+.aktivity .cards {display:flex; flex-wrap:wrap; justify-content:center; gap:20px; margin-top:40px;}
+.card {background:#111426; padding:20px; border-radius:10px; width:250px; transition:0.3s;}
+.card:hover {background:#1a1d2a;}
+.card img {width:80px; margin-bottom:15px;}
+.card h3 {margin-bottom:10px;}
+
+/* Shop */
+.shop {padding:100px 20px;}
+.shop a.btn {margin-top:20px;}
+
+/* Kontakt */
+.kontakt {padding:100px 20px;}
+.kontakt a.btn {margin-top:20px;}
+
+/* Footer */
+footer p {margin:0;}
+
+/* Responsivní */
+@media(max-width:768px){
+  nav {flex-direction:column; gap:20px;}
+  .o-serveru {flex-direction:column;}
+  .o-serveru div{text-align:center;}
+  .card {width:90%;}
+}
 </style>
 </head>
 <body>
 
 <header>
-  <nav>
-    <a href="#hero">Domů</a>
-    <a href="#o-serveru">O serveru</a>
-    <a href="#aktivity">Aktivity</a>
-    <a href="#shop">Shop</a>
-    <a href="#kontakt">Kontakt</a>
-  </nav>
+<nav>
+<a href="#hero">Domů</a>
+<a href="#o-serveru">O serveru</a>
+<a href="#aktivity">Aktivity</a>
+<a href="#shop">Shop</a>
+<a href="#kontakt">Kontakt</a>
+</nav>
 </header>
 
 <section id="hero" class="hero">
-  <img src="images/hero-image.jpg" alt="Hero Image">
-  <h1>Vítejte na Luminara RP</h1>
-  <p>Nejlepší český RP server pro FiveM</p>
-  <a href="#o-serveru" class="btn">Zjistit více</a>
+<h1>Luminara RP</h1>
+<p>Nejlepší český FiveM RP server</p>
+<a href="#o-serveru" class="btn">Zjistit více</a>
 </section>
 
-<section id="o-serveru">
-  <h2>O serveru</h2>
-  <p>Luminara RP je komunitní roleplay server s přátelským prostředím a kvalitní správou. Připojte se k nám a zažijte autentický RP zážitek!</p>
-  <img src="images/o-serveru.jpg" alt="O serveru obrázek">
+<section id="o-serveru" class="o-serveru">
+<img src="images/o-serveru.jpg" alt="O serveru">
+<div>
+<h2>O serveru</h2>
+<p>Luminara RP je komunitní roleplay server s přátelským prostředím a kvalitní správou. Připojte se k nám a zažijte autentický RP zážitek!</p>
+</div>
 </section>
 
-<section id="aktivity">
-  <h2>Aktivity</h2>
-  <div class="cards">
-    <div class="card">
-      <img src="images/prace.jpg" alt="Práce">
-      <h3>Práce a profese</h3>
-      <p>Staňte se taxikářem, policistou, nebo zlodějem. Svět je na vás připraven.</p>
-    </div>
-    <div class="card">
-      <img src="images/event.jpg" alt="Eventy">
-      <h3>Eventy</h3>
-      <p>Pravidelné eventy a speciální mise, kde si můžete vydělat bonusy a unikátní předměty.</p>
-    </div>
-    <div class="card">
-      <img src="images/rp.jpg" alt="Roleplay">
-      <h3>Roleplay</h3>
-      <p>Autentické RP s ostatními hráči, kde vaše rozhodnutí mají vliv na svět.</p>
-    </div>
-  </div>
+<section id="aktivity" class="aktivity">
+<h2>Aktivity</h2>
+<div class="cards">
+<div class="card">
+<img src="images/prace.png" alt="Práce">
+<h3>Práce a profese</h3>
+<p>Staňte se taxikářem, policistou, nebo zlodějem. Svět je na vás připraven.</p>
+</div>
+<div class="card">
+<img src="images/eventy.png" alt="Eventy">
+<h3>Eventy</h3>
+<p>Pravidelné eventy a speciální mise, kde si můžete vydělat bonusy a unikátní předměty.</p>
+</div>
+<div class="card">
+<img src="images/rp.png" alt="Roleplay">
+<h3>Roleplay</h3>
+<p>Autentické RP s ostatními hráči, kde vaše rozhodnutí mají vliv na svět.</p>
+</div>
+</div>
 </section>
 
-<section id="shop">
-  <h2>Shop</h2>
-  <p>V našem online shopu si můžete pořídit VIP status, speciální vozidla nebo unikátní itemy.</p>
-  <a href="#" class="btn">Navštívit shop</a>
+<section id="shop" class="shop">
+<h2>Shop</h2>
+<p>V našem online shopu si můžete pořídit VIP status, speciální vozidla nebo unikátní itemy.</p>
+<a href="#" class="btn">Navštívit shop</a>
 </section>
 
-<section id="kontakt">
-  <h2>Kontakt</h2>
-  <p>Máte otázky? Kontaktujte nás na Discordu nebo přes formulář.</p>
-  <a href="#" class="btn">Discord</a>
+<section id="kontakt" class="kontakt">
+<h2>Kontakt</h2>
+<p>Máte otázky? Kontaktujte nás na Discordu nebo přes formulář.</p>
+<a href="#" class="btn">Discord</a>
 </section>
 
 <footer>
-  &copy; 2025 Luminara RP. Všechna práva vyhrazena.
+<p>&copy; 2025 Luminara RP. Všechna práva vyhrazena.</p>
 </footer>
 
 </body>
