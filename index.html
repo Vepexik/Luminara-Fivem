@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luminara RP</title>
+<style>
+  /* Reset a základní styly */
+  * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif;}
+  body { background-color:#0b0e14; color:#fff; line-height:1.6;}
+  a { text-decoration:none; color:#00aaff;}
+  header { background:#0d111a; padding:20px 0; position:fixed; width:100%; top:0; z-index:100;}
+  nav { display:flex; justify-content:center; gap:30px; }
+  nav a { color:#fff; font-weight:bold; transition:0.3s; }
+  nav a:hover { color:#00aaff; }
+  section { padding:100px 20px; text-align:center; }
+  h1,h2 { margin-bottom:20px; }
+  .btn { display:inline-block; padding:10px 25px; background:#00aaff; color:#fff; border-radius:5px; margin-top:10px; transition:0.3s; }
+  .btn:hover { background:#0088cc; }
+  footer { background:#0d111a; padding:20px 0; text-align:center; margin-top:50px; color:#aaa; font-size:14px; }
+  /* Hero */
+  .hero { background: linear-gradient(135deg,#0b0e14,#1a1d2a); color:#fff; min-height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center;}
+  /* Sekce s kartami */
+  .cards { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; margin-top:40px;}
+  .card { background:#111426; padding:20px; border-radius:10px; width:250px; transition:0.3s;}
+  .card:hover { background:#1a1d2a; }
+  .card h3 { margin-bottom:10px; }
+  @media(max-width:768px){ nav { flex-direction:column; gap:15px; } .cards { flex-direction:column; align-items:center; } }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="#hero">Domů</a>
+    <a href="#o-serveru">O serveru</a>
+    <a href="#aktivity">Aktivity</a>
+    <a href="#shop">Shop</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>
+</header>
+
+<section id="hero" class="hero">
+  <h1>Vítejte na Luminara RP</h1>
+  <p>Nejlepší český RP server pro FiveM</p>
+  <a href="#o-serveru" class="btn">Zjistit více</a>
+</section>
+
+<section id="o-serveru">
+  <h2>O serveru</h2>
+  <p>Luminara RP je komunitní roleplay server s přátelským prostředím a kvalitní správou. Připojte se k nám a zažijte autentický RP zážitek!</p>
+</section>
+
+<section id="aktivity">
+  <h2>Aktivity</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Práce a profese</h3>
+      <p>Staňte se taxikářem, policistou, nebo zlodějem. Svět je na vás připraven.</p>
+    </div>
+    <div class="card">
+      <h3>Eventy</h3>
+      <p>Pravidelné eventy a speciální mise, kde si můžete vydělat bonusy a unikátní předměty.</p>
+    </div>
+    <div class="card">
+      <h3>Roleplay</h3>
+      <p>Autentické RP s ostatními hráči, kde vaše rozhodnutí mají vliv na svět.</p>
+    </div>
+  </div>
+</section>
+
+<section id="shop">
+  <h2>Shop</h2>
+  <p>V našem online shopu si můžete pořídit VIP status, speciální vozidla nebo unikátní itemy.</p>
+  <a href="#" class="btn">Navštívit shop</a>
+</section>
+
+<section id="kontakt">
+  <h2>Kontakt</h2>
+  <p>Máte otázky? Kontaktujte nás na Discordu nebo přes formulář.</p>
+  <a href="#" class="btn">Discord</a>
+</section>
+
+<footer>
+  &copy; 2025 Luminara RP. Všechna práva vyhrazena.
+</footer>
+
+</body>
+</html>
