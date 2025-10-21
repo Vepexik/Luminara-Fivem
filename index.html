@@ -3,184 +3,124 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Providerp Clone - Luminara RP</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<title>Provide FiveM Clone</title>
+<script src="https://cdn.tailwindcss.com"></script>
 <style>
-/* Reset a základní styly */
-* {margin:0; padding:0; box-sizing:border-box; font-family:'Montserrat', sans-serif;}
-body {background:#0b0e14; color:#fff; line-height:1.6; scroll-behavior:smooth;}
-a {text-decoration:none; color:#00c8ff;}
-header {position:fixed; top:0; width:100%; background:rgba(13,17,26,0.95); z-index:100; padding:20px 0; backdrop-filter: blur(5px); border-bottom-left-radius:30px; border-bottom-right-radius:30px; box-shadow:0 5px 20px rgba(0,0,0,0.3);}
-nav {display:flex; justify-content:center; gap:50px;}
-nav a {font-weight:700; transition:0.3s; text-transform:uppercase;}
-nav a:hover {color:#00e0ff; transform:translateY(-3px);}
-section {padding:140px 20px; text-align:center; opacity:0; transform:translateY(50px); transition:1s ease;}
-section.visible {opacity:1; transform:translateY(0);}
-h1,h2,h3 {margin-bottom:20px;}
-.btn {display:inline-block; padding:14px 36px; background:linear-gradient(45deg,#00c8ff,#0055ff); color:#fff; border-radius:10px; margin-top:10px; font-weight:700; transition:0.4s; text-transform:uppercase;}
-.btn:hover {background:linear-gradient(45deg,#0055ff,#00e0ff); transform:translateY(-3px);}
-footer {background:#0d111a; padding:30px 0; text-align:center; color:#aaa; font-size:14px; margin-top:50px;}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* Hero */
-.hero {
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  background: linear-gradient(135deg,#0b0e14,#1a1d2a);
-  border-bottom-left-radius:60px;
-  border-bottom-right-radius:60px;
-  position:relative;
-  overflow:hidden;
-}
-.hero img {
-  position:absolute;
-  bottom:0;
-  right:0;
-  max-width:55%;
-  opacity:0.15;
-  animation: float 6s ease-in-out infinite;
-}
-@keyframes float {
-  0%,100% {transform: translateY(0px);}
-  50% {transform: translateY(-20px);}
-}
-.hero h1 {font-size:3.5rem; margin-bottom:20px; letter-spacing:2px;}
-.hero p {font-size:1.3rem; margin-bottom:30px;}
-
-/* O serveru */
-.o-serveru {display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:50px; padding:120px 20px;}
-.o-serveru img {max-width:450px; border-radius:30px; box-shadow:0 10px 30px rgba(0,0,0,0.3);}
-.o-serveru div {max-width:550px; text-align:left;}
-
-/* Aktivity */
-.aktivity .cards {display:flex; flex-wrap:wrap; justify-content:center; gap:25px; margin-top:40px;}
-.card {
-  background:#111426;
-  padding:25px;
-  border-radius:25px;
-  width:260px;
-  transition:0.5s;
-  box-shadow:0 10px 25px rgba(0,0,0,0.25);
-  opacity:0;
-  transform:translateY(50px);
-}
-.card.visible {opacity:1; transform:translateY(0);}
-.card img {width:80px; margin-bottom:15px;}
-.card h3 {margin-bottom:12px;}
-
-/* Shop */
-.shop {padding:120px 20px;}
-.shop a.btn {margin-top:25px;}
-
-/* Kontakt */
-.kontakt {padding:120px 20px;}
-.kontakt a.btn {margin-top:25px;}
-
-/* Footer */
-footer p {margin:0;}
-
-/* Responsivní */
-@media(max-width:768px){
-  nav {flex-direction:column; gap:25px;}
-  .o-serveru {flex-direction:column;}
-  .o-serveru div{text-align:center;}
-  .card {width:90%;}
-  .hero img {max-width:75%;}
-  .hero h1 {font-size:2.8rem;}
-  .hero p {font-size:1.1rem;}
+@layer base {
+  :root {
+    --background: hsl(220,30%,5%);
+    --foreground: hsl(210,40%,98%);
+    --primary: hsl(217,91%,60%);
+    --gradient-primary: linear-gradient(135deg,hsl(217,91%,60%) 0%,hsl(190,90%,50%) 100%);
+    --radius: 0.75rem;
+  }
+  body { @apply bg-[hsl(220,30%,5%)] text-[hsl(210,40%,98%)]; }
 }
 </style>
 </head>
-<body>
+<body class="relative">
 
-<header>
-<nav>
-<a href="#hero">Domů</a>
-<a href="#o-serveru">O serveru</a>
-<a href="#aktivity">Aktivity</a>
-<a href="#shop">Shop</a>
-<a href="#kontakt">Kontakt</a>
+<!-- Announcement Bar -->
+<div class="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-[hsl(217,91%,60%)] to-[hsl(190,90%,50%)] text-[hsl(220,30%,5%)] py-2 px-4">
+  <div class="container mx-auto flex items-center justify-center gap-2 text-sm font-medium">
+    ✨ <span>Get VIP benefits and enjoy roleplay to the maximum!</span>
+    <a href="#store" class="underline hover:no-underline ml-2 font-semibold">Store</a>
+  </div>
+</div>
+
+<!-- Navbar -->
+<nav class="fixed top-8 left-0 right-0 z-50 bg-[hsl(220,30%,5%)/80] backdrop-blur-lg border-b border-[hsl(220,20%,20%)] rounded-b-2xl">
+  <div class="container mx-auto px-4 flex items-center justify-between h-16">
+    <div class="flex items-center gap-2">
+      🎮
+      <span class="text-xl font-bold bg-gradient-to-r from-[hsl(217,91%,60%)] to-[hsl(190,90%,50%)] bg-clip-text text-transparent">
+        Provide FiveM
+      </span>
+    </div>
+    <div class="hidden md:flex items-center gap-6">
+      <a href="#about" class="text-sm text-gray-400 hover:text-white transition-colors">About</a>
+      <a href="#features" class="text-sm text-gray-400 hover:text-white transition-colors">Features</a>
+      <a href="#team" class="text-sm text-gray-400 hover:text-white transition-colors">Team</a>
+      <a href="#partners" class="text-sm text-gray-400 hover:text-white transition-colors">Partners</a>
+    </div>
+    <button class="px-4 py-2 bg-[hsl(217,91%,60%)] rounded-md text-[hsl(220,30%,5%)] font-semibold hover:brightness-110 transition">Join Now</button>
+  </div>
 </nav>
-</header>
 
-<section id="hero" class="hero">
-<img src="images/hero.png" alt="Hero">
-<h1>LUMINARA RP</h1>
-<p>Nejlepší český FiveM Roleplay server</p>
-<a href="#o-serveru" class="btn">Připojit se</a>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center pt-32">
+  <div class="absolute inset-0" style="background:linear-gradient(180deg,hsl(220,30%,5%) 0%,hsl(220,35%,8%) 100%)"></div>
+  <div class="container mx-auto text-center relative z-10 space-y-6">
+    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[hsl(217,91%,60%)/10] border border-[hsl(217,91%,60%)/20]">
+      👥
+      <span class="text-sm">Largest CZ/SK FiveM Server</span>
+    </div>
+    <h1 class="text-5xl md:text-7xl font-bold leading-tight">
+      Welcome to the <span class="bg-gradient-to-r from-[hsl(217,91%,60%)] to-[hsl(190,90%,50%)] bg-clip-text text-transparent">Provide FiveM</span> Portal
+    </h1>
+    <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">
+      Our community is built on principles of cooperation, respect, and fun. Join us and experience an authentic gaming experience.
+    </p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+      <button class="px-6 py-3 bg-[hsl(217,91%,60%)] rounded-md text-[hsl(220,30%,5%)] font-bold hover:brightness-110 transition flex items-center gap-2">
+        Connect Now →
+      </button>
+      <button class="px-6 py-3 bg-gray-700 rounded-md text-white font-bold flex items-center gap-2 hover:brightness-110 transition">
+        Discord
+      </button>
+    </div>
+  </div>
 </section>
 
-<section id="o-serveru" class="o-serveru">
-<img src="images/o-serveru.png" alt="O serveru">
-<div>
-<h2>O serveru</h2>
-<p>Luminara RP je český komunitní roleplay server pro FiveM. Připojte se a zažijte autentické RP zážitky, skvělou komunitu a pravidelné eventy.</p>
-</div>
+<!-- Features Section -->
+<section id="features" class="py-32">
+  <div class="container mx-auto text-center">
+    <h2 class="text-4xl font-bold mb-12">Features</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="p-6 bg-[hsl(220,25%,8%)] rounded-xl shadow-lg hover:shadow-[0_0_30px_hsla(217,91%,60%,0.4)] transition">
+        <div class="text-5xl mb-4">💼</div>
+        <h3 class="font-bold mb-2">Jobs & Professions</h3>
+        <p class="text-gray-400">Become a taxi driver, cop, or thief and build your character from scratch.</p>
+      </div>
+      <div class="p-6 bg-[hsl(220,25%,8%)] rounded-xl shadow-lg hover:shadow-[0_0_30px_hsla(217,91%,60%,0.4)] transition">
+        <div class="text-5xl mb-4">🎉</div>
+        <h3 class="font-bold mb-2">Events</h3>
+        <p class="text-gray-400">Regular events with rewards and special missions for community members.</p>
+      </div>
+      <div class="p-6 bg-[hsl(220,25%,8%)] rounded-xl shadow-lg hover:shadow-[0_0_30px_hsla(217,91%,60%,0.4)] transition">
+        <div class="text-5xl mb-4">🛠️</div>
+        <h3 class="font-bold mb-2">Roleplay</h3>
+        <p class="text-gray-400">Authentic RP with other players, where your decisions affect the world.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section id="aktivity" class="aktivity">
-<h2>Aktivity</h2>
-<div class="cards">
-<div class="card">
-<img src="images/prace.png" alt="Práce">
-<h3>Práce a Profese</h3>
-<p>Staňte se taxikářem, policistou, nebo zlodějem a vybudujte svou postavu od začátku.</p>
-</div>
-<div class="card">
-<img src="images/eventy.png" alt="Eventy">
-<h3>Eventy</h3>
-<p>Pravidelné eventy s odměnami a speciální mise pro členy komunity.</p>
-</div>
-<div class="card">
-<img src="images/rp.png" alt="Roleplay">
-<h3>Roleplay</h3>
-<p>Autentické RP s ostatními hráči, kde vaše rozhodnutí mají vliv na svět.</p>
-</div>
-</div>
-</section>
-
-<section id="shop" class="shop">
-<h2>Shop</h2>
-<p>VIP status, speciální vozidla, exkluzivní itemy a další bonusy pro hráče.</p>
-<a href="#" class="btn">Navštívit Shop</a>
-</section>
-
-<section id="kontakt" class="kontakt">
-<h2>Kontakt</h2>
-<p>Máte otázky? Připojte se na náš Discord nebo použijte kontaktní formulář.</p>
-<a href="#" class="btn">Discord</a>
-</section>
-
-<footer>
-<p>&copy; 2025 Luminara RP. Všechna práva vyhrazena.</p>
+<!-- Footer -->
+<footer class="py-12 bg-[hsl(220,25%,8%)] text-gray-400 text-center">
+  <p>&copy; 2025 Provide FiveM. All rights reserved.</p>
 </footer>
 
+<!-- Smooth fade-in on scroll -->
 <script>
-// Fade-in efekt při scrollu
-function reveal() {
-  const sections = document.querySelectorAll('section');
-  const cards = document.querySelectorAll('.card');
-  const windowHeight = window.innerHeight;
-
-  sections.forEach(section => {
-    const top = section.getBoundingClientRect().top;
-    if(top < windowHeight - 100){
-      section.classList.add('visible');
+const sections = document.querySelectorAll('section');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('opacity-100', 'translate-y-0');
+      entry.target.classList.remove('opacity-0', 'translate-y-12');
     }
   });
+},{threshold:0.2});
 
-  cards.forEach(card => {
-    const top = card.getBoundingClientRect().top;
-    if(top < windowHeight - 100){
-      card.classList.add('visible');
-    }
-  });
-}
-
-window.addEventListener('scroll', reveal);
-window.addEventListener('load', reveal);
+sections.forEach(section=>{
+  section.classList.add('opacity-0','translate-y-12','transition','duration-700');
+  observer.observe(section);
+});
 </script>
 
 </body>
